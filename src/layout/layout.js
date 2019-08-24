@@ -4,7 +4,8 @@ import { Link } from 'gatsby'
 export default ({ children }) => (
   <div style={{
     'max-width': '600px',
-    padding: '50px'
+    margin: '0 auto',
+    padding: '50px',
   }}>
     <header>
       <Link to="/">Home</Link>

@@ -5,18 +5,18 @@ import Layout from '../layout/layout'
 export default ({ data }) => {
   return (
     <Layout>
-      <div style={{ padding: '2rem' }}>
-        <div>
-          <h1>Blog</h1>
-        </div>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h1>{node.frontmatter.title}</h1>
-            </Link>
-          </div>
-        ))}
+      <div>
+        <h1>Blog</h1>
       </div>
+      <ul>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <li key={node.id}>
+          <Link to={node.fields.slug}>
+            {node.frontmatter.title}
+          </Link>
+        </li>
+      ))}
+      </ul>
     </Layout>
   )
 }
